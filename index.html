@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <script src="document.state.js"></script>
+  <link id="in-source" rel="stylesheet" href="views.css" />
+
+  <title>View Switching Hack</title>
+
+  <style>
+
+    body, label {
+      display: block;
+      padding: 1em;
+    }
+
+    body {
+      background: orange;
+    }
+
+    section {
+      padding: 2em;
+    }
+
+    @supports (state: foo) {
+      body {
+        background: blue;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <section>
+    <label><input name="state" type="checkbox" value="foo" />Foo State</label>
+    <label><input name="state" type="checkbox" value="bar" />Bar State</label>
+  </section>
+ 
+  <script>
+
+    document.addEventListener('change', function(e){
+      document.state[e.target.checked ? 'activate' : 'deactivate'](e.target.value);
+    });
+
+  </script>
+
+</body>
+
+</html>

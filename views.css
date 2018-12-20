@@ -1,0 +1,16 @@
+
+@supports (state: foo) {
+  body {
+    background: red;
+  }
+}
+
+@supports (state: bar) {
+  body {
+    background: green;
+  }
+
+  section {
+    background: lightblue;
+  }
+}
