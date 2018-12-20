@@ -4,7 +4,7 @@ An experimental bit of code that enables encapsulation of CSS styles in declarat
 
 ## Usage
 
-## Declaring a CSS State Block
+### Declaring a CSS State Block
 
 States are declaratively defined by adding a specially formed `@supports` rule to any same-domain stylesheet or inline `<style>` tag. This is what it looks like to declare a `state` block:
 
@@ -22,7 +22,7 @@ States are declaratively defined by adding a specially formed `@supports` rule t
 }
 ```
 
-## Activating a State
+### Activating a State
 
 Activating a state is rather simple, you just call the `document.state.activate()` method with whatever state you wish to activate:
 
@@ -34,7 +34,7 @@ You can have multiple states active at once, and if you want to know which state
 
 When a state is activated, the styles in the state block are applied at the same position as the `@supports` block they are declared in, meaning they follow the natural positional application and subsequent cascade as any other style block would.
 
-## Deactivating a State
+### Deactivating a State
 
 Just like activating a state, call `document.state.deactivate()` with whatever state you want to deactivate:
 
